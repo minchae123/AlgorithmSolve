@@ -1,6 +1,7 @@
 #include <iostream>
 #include <map>
 #include <string>
+#include <unordered_map>
 
 using namespace std;
 
@@ -14,8 +15,8 @@ int main()
     cin >> n >> m;
     string poket;
 
-    map<int, string> m1;
-    map<string, int> m2;
+    unordered_map<int, string> m1;
+    unordered_map<string, int> m2;
 
     for (int i = 1; i <= n; i++) {
         cin >> poket;

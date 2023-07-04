@@ -1,22 +1,26 @@
 #include <iostream>
-
 using namespace std;
 
 int main()
 {
-    int x, y, z, temp;
-    cin >> x >> y;
-    int array[x];
+	int arr[100];
+	int n, m;
+	cin >> n >> m;
 
-    for (int i = 0; i < x; i++)
-        array[i] = i+1;
+	for (int i = 1; i <= n; i++)
+	{
+		arr[i] = i;
+	}
 
-    for (int i = 0; i < y; i++)
-    {
-        cin >> temp >> z;
-        swap(array[temp-1], array[z-1]);
-    }
-
-    for (int i = 0; i < x; i++)
-        cout << array[i] << ' ';
+	for (int i = 0; i < m; i++)
+	{
+		int a, b;
+		cin >> a >> b;
+		swap(arr[a], arr[b]);
+	}
+	
+	for (int i = 0; i < n; i++)
+	{
+		cout << arr[i + 1] << " ";
+	}
 }

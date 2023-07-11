@@ -5,7 +5,7 @@ using namespace std;
 int main() {
 
 	string s;
-	int res = 1;
+	int cnt = 1;
 
 	getline(cin, s);
 
@@ -15,10 +15,10 @@ int main() {
 	}
 
 	for (int i = 1; i < s.length() - 1; i++) {
-		if (s[i] == ' ') res++;
+		if (s[i] == ' ') cnt++;
 	}
 
-	cout << res;
+	cout << cnt;
 
 	return 0;
 }

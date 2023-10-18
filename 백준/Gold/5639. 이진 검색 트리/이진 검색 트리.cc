@@ -1,62 +1,52 @@
 #include <iostream>
+#include <vector>
+#include <algorithm>
 
 using namespace std;
-
-struct Node
+struct BTreeNode
 {
-    int value = NULL;
-    Node* left = NULL;
-    Node* right = NULL;
+    int data = 0;
+    struct BTreeNode* left = nullptr;
+    struct BTreeNode* right = nullptr;
 };
 
-void Insert(int index, Node* Parent);
-void PostorderTraversal(Node& findNode);
+void insertTree(BTreeNode& a, int value)
+{
+    if (a.data == 0)
+    {
+        a.data = value;
+    }
+    else if (a.data > value)
+    {
+        if (a.left == NULL)
+            a.left = new BTreeNode();
+        insertTree(*a.left, value);
+    }
+    else if (a.data < value)
+    {
+        if (a.right == NULL)
+            a.right = new BTreeNode();
+        insertTree(*a.right, value);
+    }
+}
+
+void Print(BTreeNode& t)
+{
+    if (t.left != nullptr)
+        Print(*t.left);
+    if (t.right != nullptr)
+        Print(*t.right);
+    cout << t.data << "\n";
+}
 
 int main()
 {
-    Node rootNode;
-    rootNode.value = NULL;
-    int input;
+    BTreeNode root;
+    int input = 0;
 
     while (cin >> input)
     {
-        if (rootNode.value == NULL)
-            rootNode.value = input;
-        else
-            Insert(input, &rootNode);
+        insertTree(root, input);
     }
-    PostorderTraversal(rootNode);
-}
-
-void Insert(int index, Node* parent)
-{
-    if (parent->value < index)
-    {
-        if (parent->right == NULL)
-        {
-            parent->right = new Node;
-            parent->right->value = index;
-        }
-        else
-            Insert(index, parent->right);
-    }
-    else
-    {
-        if (parent->left == NULL)
-        {
-            parent->left = new Node;
-            parent->left->value = index;
-        }
-        else
-            Insert(index, parent->left);
-    }
-}
-
-void PostorderTraversal(Node& findNode)
-{
-    if (findNode.left != NULL)
-        PostorderTraversal(*findNode.left);
-    if (findNode.right != NULL)
-        PostorderTraversal(*findNode.right);
-    cout << findNode.value << '\n';
+    Print(root);
 }

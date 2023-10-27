@@ -3,25 +3,25 @@
 using namespace std;
 int main()
 {
-    map<string, int> list;
+    map<string, int> maple;
     int n;
     cin >> n;
     for (int i = 0; i < n; i++)
     {
         string st;
         cin >> st;
-        list[st]++;
+        maple[st]++;
     }
     cin >> n;
     for (int i = 0; i < n; i++)
     {
         string a;
         cin >> a;
-        list.erase(a);
+        maple.erase(a);
     }
-    cout << list.size() << endl;
+    cout << maple.size() << endl;
 
-    for (auto i : list)
+    for (auto i : maple)
     {
         if (i.second == 0) continue;
         cout << i.first << endl;

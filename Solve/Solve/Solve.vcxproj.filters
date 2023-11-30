@@ -72,7 +72,10 @@
     <ClCompile Include="패션왕 신해빈.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="소스.cpp">
+    <ClCompile Include="나무자르기.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="피보나치.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

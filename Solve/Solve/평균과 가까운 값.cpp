@@ -15,7 +15,7 @@ int main()
 			sum += a;
 			v.push_back(a);
 		}
-
+		
 		avg = round(sum / 9.f);
 
 		for (int i = 0; i < 9; i++)

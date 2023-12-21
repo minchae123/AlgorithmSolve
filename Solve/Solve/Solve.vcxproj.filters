@@ -111,5 +111,11 @@
     <ClCompile Include="7의 개수.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="p와y.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="가까운수.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

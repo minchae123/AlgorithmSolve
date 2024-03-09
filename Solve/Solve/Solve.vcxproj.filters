@@ -117,5 +117,8 @@
     <ClCompile Include="가까운수.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="atm.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
